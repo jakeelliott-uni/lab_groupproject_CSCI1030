@@ -1,16 +1,14 @@
-# <your project name>
+# <Chess 2.0>
 
 ## The application
 
-<Two or three sentences: what are you building, and who plays or uses it? It has to fit the
-networked, multi-user theme - see the "Suggested projects" section of
-[`MILESTONES.md`](MILESTONES.md). Name one of the suggestions, or describe your own idea.>
+<A chess like game that will inlude new pieces. Eventually new boards or winning conditions.>
 
 ## The team
 
 | Full name | GitHub username |
 |-----------|-----------------|
-| <name>    | @<username>     |
+| Jake Elliott    | @jakeelliott-uni    |
 | <name>    | @<username>     |
 | <name>    | @<username>     |
 | <name>    | @<username>     |
