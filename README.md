@@ -9,7 +9,7 @@
 | Full name | GitHub username |
 |-----------|-----------------|
 | Jake Elliott    | @jakeelliott-uni    |
-| <name>    | @<username>     |
+| Jonad Gabrielle Senolos    | @JGsenolos     |
 | <name>    | @<username>     |
 | <name>    | @<username>     |
 | <name>    | @<username>     |
