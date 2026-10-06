@@ -34,7 +34,11 @@ def main():
         if cleanMoveInput(move):
             print("Valid move input.")
             # Call updateBoard() with the move variable to update the board state
-            updateBoard(move)
+            if player_turn:
+                playerNumber = 1
+            else:
+                playerNumber = 2
+            updateBoard(move, playerNumber)
             # Print it afterwards
             printBoard()
 
@@ -47,7 +51,7 @@ def main():
         if player_turn:
             player_turn = False
         else:
-            player_turn - True
+            player_turn = True
 
 
 
