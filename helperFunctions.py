@@ -17,7 +17,7 @@ def cleanMoveInput(move):
         print("Squares must be a letter from a - h")
         return False
 
-    if num_one < 1 or num_one > 8 or num_two < 1 or num_two > 8:
+    if int(num_one) < 1 or int(num_one) > 8 or int(num_two) < 1 or int(num_two) > 8:
         print("Grid must be a number from 1 - 8")
         return False
 
