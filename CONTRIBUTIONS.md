@@ -21,7 +21,7 @@ in - the rest of this file is one row per member, per milestone, against their s
 
 | Student | Slice (the feature they own) |
 |---------|------------------------------|
-| <name>  | <feature>                    |
+| Jonad   | Layout & Movement (Visuals)  |
 | <name>  | <feature>                    |
 | <name>  | <feature>                    |
 | <name>  | <feature>                    |
@@ -58,7 +58,7 @@ Worked example:
 | Student | Planning | Control flow | Collections | Functions |
 |---------|----------|--------------|-------------|-----------|
 | <name>  |          |              |             |           |
-| <name>  |          |              |             |           |
+| Jonad   | 78e0943  |   78e0943    |   01e83fe   |  01e83fe  |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
