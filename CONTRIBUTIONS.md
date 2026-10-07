@@ -21,7 +21,7 @@ in - the rest of this file is one row per member, per milestone, against their s
 
 | Student | Slice (the feature they own) |
 |---------|------------------------------|
-| Jonad   | Layout & Movement (Visuals)  |
+| Jonad Gabrielle Senolos  | Layout & Movement (Visuals)  |
 | Hadi Zahid  | Checkwinner & checkmate                   |
 | Jake Elliott  | Main loop and check move helpers        |
 | <name>  | <feature>                    |
