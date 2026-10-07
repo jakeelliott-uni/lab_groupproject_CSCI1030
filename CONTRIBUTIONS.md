@@ -22,7 +22,7 @@ in - the rest of this file is one row per member, per milestone, against their s
 | Student | Slice (the feature they own) |
 |---------|------------------------------|
 | Jonad   | Layout & Movement (Visuals)  |
-| <Hadi Zahid>  | <Checkwinner & checkmate>                    |
+| Hadi Zahid  | Checkwinner & checkmate                   |
 | <name>  | <feature>                    |
 | <name>  | <feature>                    |
 | <name>  | <feature>                    |
