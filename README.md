@@ -10,7 +10,7 @@
 |-----------|-----------------|
 | Jake Elliott    | @jakeelliott-uni    |
 | Jonad Gabrielle Senolos    | @JGsenolos     |
-| <name>    | @<username>     |
+| <Hadi Zahid    | @hadizahid2026     |
 | <name>    | @<username>     |
 | <name>    | @<username>     |
 
