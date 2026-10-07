@@ -57,7 +57,7 @@ Worked example:
 
 | Student | Planning | Control flow | Collections | Functions |
 |---------|----------|--------------|-------------|-----------|
-| <name>  |          |              |             |           |
+| Jake    | a9d0e07  |    a9d0e07   |     a9d0e07 |   a9d0e07 |
 | Jonad   | 78e0943  |   78e0943    |   01e83fe   |  01e83fe  |
 | Hadi    |  4d1af4a |  4d1af4a     |  4d1af4a    | 4d1af4a   |
 | <name>  |          |              |             |           |
