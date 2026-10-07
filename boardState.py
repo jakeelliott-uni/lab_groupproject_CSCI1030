@@ -1,4 +1,4 @@
-
+from helperFunctions import *
 # Placeholder for the actual board state
 board_state = [
     ["R", "N", "B", "Q", "K", "B", "N", "R"],   # 0   INDEXES, !! NOT CHESS NOTATION !!
@@ -36,52 +36,8 @@ def updateBoard(move, playerNumber):
     # 8 - row number = index in the board_state list
 
     # Horizontal movement
-    startX = move[1]
-    endX = move[3]
-    startColumn = 0
-    endColumn = 0
-
-    # Convert the starting letter to a column index
-    if startX == "a":
-        startColumn = 0
-    elif startX == "b":
-        startColumn = 1 
-    elif startX == "c":
-        startColumn = 2
-    elif startX == "d":
-        startColumn = 3
-    elif startX == "e":
-        startColumn = 4
-    elif startX == "f":
-        startColumn = 5
-    elif startX == "g":
-        startColumn = 6
-    elif startX == "h":
-        startColumn = 7
-    else:
-        print("Invalid starting column letter.")
-        return
-
-    # Convert ending letter to column index
-    if endX == "a":
-        endColumn = 0
-    elif endX == "b":
-        endColumn = 1
-    elif endX == "c":
-        endColumn = 2
-    elif endX == "d":
-        endColumn = 3
-    elif endX == "e":
-        endColumn = 4
-    elif endX == "f":
-        endColumn = 5
-    elif endX == "g":
-        endColumn = 6
-    elif endX == "h":
-        endColumn = 7
-    else:
-        print("Invalid ending column letter.")
-        return
+    startColumn = letterToNumber(move[1])
+    endColumn = letterToNumber(move[3])
 
     # Turn it to a coordinate system
     """

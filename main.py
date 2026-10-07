@@ -26,12 +26,12 @@ def main():
             print("This code ran")
             break
 
-        if not cleanMoveInput(move):
+        if not validMove(move):
             print("Try a different move.")
             continue
 
         # Jonad in progress: Coding updateBoard()
-        if cleanMoveInput(move):
+        if validMove(move):
             print("Valid move input.")
             # Call updateBoard() with the move variable to update the board state
             if player_turn:
