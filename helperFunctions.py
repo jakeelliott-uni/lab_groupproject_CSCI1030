@@ -90,3 +90,55 @@ def letterToNumber(letter):
         return 0
 
     return number 
+    
+def check_winner(board):
+    p1_king_alive = False
+    p2_king_alive = False
+
+    for row in board:
+        for piece in row:
+            if piece == 'k':
+                p1_king_alive = True
+            elif piece == 'K':
+                p2_king_alive = True
+
+    if p1_king_alive and not p2_king_alive:
+        return "Player 1 Wins"
+    elif p2_king_alive and not p1_king_alive:
+        return "Player 2 Wins"
+    else:
+        return "None"
+
+
+def numberToLetter(num):
+    letters = "abcdefgh"
+    return letters[num]
+
+
+def is_in_check(board, playerNumber):
+    king_row = -1
+    king_col = -1
+    target_king = 'k' if playerNumber == 1 else 'K'
+
+    for r in range(8):
+        for c in range(8):
+            if board[r][c] == target_king:
+                king_row = r
+                king_col = c
+
+    for r in range(8):
+        for c in range(8):
+            piece = board[r][c]
+            if piece != " ":
+                is_opponent = piece.isupper() if playerNumber == 1 else piece.islower()
+                if is_opponent:
+                    start_letter = numberToLetter(c)
+                    start_num = str(8 - r)
+                    end_letter = numberToLetter(king_col)
+                    end_num = str(8 - king_row)
+                    move_string = piece.upper() + start_letter + start_num + end_letter + end_num
+
+                    if validMove(move_string):
+                        return True
+
+    return False
