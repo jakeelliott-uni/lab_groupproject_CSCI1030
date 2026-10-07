@@ -23,7 +23,7 @@ in - the rest of this file is one row per member, per milestone, against their s
 |---------|------------------------------|
 | Jonad   | Layout & Movement (Visuals)  |
 | Hadi Zahid  | Checkwinner & checkmate                   |
-| <name>  | <feature>                    |
+| Jake Elliott  | Main loop and check move helpers        |
 | <name>  | <feature>                    |
 | <name>  | <feature>                    |
 
