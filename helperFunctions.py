@@ -139,6 +139,6 @@ def is_in_check(board, playerNumber):
                     move_string = piece.upper() + start_letter + start_num + end_letter + end_num
 
                     if validMove(move_string):
-                        return True
+                        return False
 
-    return False
+    return True

@@ -52,5 +52,3 @@ def updateBoard(move, playerNumber):
         board_state[endRow][endColumn] = move[0].lower()
     else:
         board_state[endRow][endColumn] = move[0].upper()
-    
- 

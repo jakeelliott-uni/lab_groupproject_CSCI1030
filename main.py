@@ -1,5 +1,6 @@
 from helperFunctions import *
 from boardState import *
+
 def main():
     print("Chess 2.0")
     print("////////////////////////////////")
@@ -38,15 +39,21 @@ def main():
                 playerNumber = 1
             else:
                 playerNumber = 2
+
+            if is_in_check(board_state, playerNumber):
+                if move[0] not in "kK":
+                    print("You must move your king out of check")
+                    continue
             updateBoard(move, playerNumber)
-            # Print it afterwards
             printBoard()
 
         # Call boardState() and/or Update boardState() along with move variable like boardState(move)
         # e.g. state = boardState() or if no return values just boardState() and it prints the state
 
-        # Handle what happens if there is a check or checkmate. Break loop if checkmate and declare winner. 
-        # e.g. boardState() can return more than one value if there is a check or checkmate. 
+        winner = check_winner(board_state)
+        if winner != "None":
+            print(winner)
+            break 
 
         if player_turn:
             player_turn = False
