@@ -18,6 +18,8 @@ class ChessGameGUI:
 
     def start(self):
         self.root.title("Chess Board")
+        self.root.protocol("WM_DELETE_WINDOW", self.quit)
+
         # Game state: map coordinates (row, col) -> Piece instance
         self.pieces = {
             (0, 0): Rook(0, 0),
@@ -53,6 +55,7 @@ class ChessGameGUI:
         self.update_board()
 
     def quit(self):
+        self.root.protocol("WM_DELETE_WINDOW", self.root.destroy)
         self.frame.pack_forget()
         self.on_close()
 
