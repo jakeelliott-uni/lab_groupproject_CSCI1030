@@ -1,6 +1,11 @@
 import tkinter as tk
 from pieces import *
 
+# ToDo Needs: Track pieces to implement more complex behaviour like pawns double first move/enpassant, and castling.
+#             Implement the win condition.
+
+# ToDo Wants: A visual for taken pieces. Visuals for the pieces. Anything you think about that you'd want.
+
 class ChessGameGUI:
     def __init__(self, root, on_close):
         self.root = root
@@ -78,6 +83,7 @@ class ChessGameGUI:
         # Call the piece's move method else clear selection
         moved = self.selected_piece.move(row, col, blocked)
         if moved:
+            # Pieces .move method should handle the row and col change
             del self.pieces[old_coord]
             self.pieces[clicked_coord] = self.selected_piece
             self.selected_piece = None

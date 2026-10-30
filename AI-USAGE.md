@@ -81,7 +81,7 @@ changed and how you tested it.
 
 | Student | AI tool(s) used | Used it for |
 |---------|-----------------|-------------|
-| <name>  |                 |             |
+| Jake Elliott | Gemini in Google search |  Practice problems related to tkinter menus/frames and explaining ways to build a chessGUI class         |
 | <name>  |                 |             |
 | <name>  |                 |             |
 | <name>  |                 |             |
