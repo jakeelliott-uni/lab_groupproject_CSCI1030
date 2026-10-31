@@ -1,6 +1,12 @@
 import tkinter as tk
 from pieces import *
 
+"""
+The manager class for the board creation and click behaviour. Takes a 'root' object which is a tk.TK()
+and 'on_close' which is a method from Launcher that reopens the mainmenu.
+Feel free to reference or copy if you're creating another gameGUI.
+"""
+
 # ToDo Needs: Track pieces to implement more complex behaviour like pawns double first move/enpassant, and castling.
 #             Implement the win condition.
 
@@ -16,6 +22,8 @@ class ChessGameGUI:
         self.buttons = {}
         self.selected_piece = None
 
+    # This method is critical to have or else Launcher won't be compatible
+    # It's essentially boardState()
     def start(self):
         self.root.title("Chess Board")
         self.root.protocol("WM_DELETE_WINDOW", self.quit)
@@ -83,10 +91,10 @@ class ChessGameGUI:
         old_coord = (self.selected_piece.row, self.selected_piece.col)
         blocked = self.get_blocked_list()
 
-        # Call the piece's move method else clear selection
+        # Call the piece's move() method else clear selection
         moved = self.selected_piece.move(row, col, blocked)
         if moved:
-            # Pieces .move method should handle the row and col change
+            # Pieces move() method should handle the row and col change
             del self.pieces[old_coord]
             self.pieces[clicked_coord] = self.selected_piece
             self.selected_piece = None
@@ -106,9 +114,3 @@ class ChessGameGUI:
                 piece_type = self.pieces[(r, c)].__class__.__name__
                 label = "N" if piece_type == "Knight" else piece_type[0]
                 btn.config(text=label)
-
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    gui = ChessGameGUI(root)
-    root.mainloop()

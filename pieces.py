@@ -1,8 +1,16 @@
+"""
+The parent Piece class handles the general move checks.
+When creating a new piece you just need to add it's logic to a can_move() method.
+"""
+# ToDo: Adding the logic to take pieces, will probably look like a mix of _valid_destination
+#       and path_clear()
 class Piece:
     def __init__(self, row, col):
         self.row = row
         self.col = col
 
+    # Base check to see if the move is out of bounds or landing on a piece(eventually just their own pieces)
+    # Only use this if the piece is intended to 'hop' over other pieces, like the Knight.
     def _valid_destination(self, row, col, blocked):
         return (
             0 <= row < 8
@@ -11,9 +19,12 @@ class Piece:
             and (row, col) not in blocked
         )
 
+    # To be inherited
     def can_move(self, row, col, blocked):
         return False
 
+    # Checking if the entire set of tiles in the path of movement is clear.
+    # NOTE: This isn't needed for pieces that 'hop" other pieces. 
     def path_clear(self, row, col, blocked):
         if not self._valid_destination(row, col, blocked):
             return False
@@ -39,6 +50,7 @@ class Piece:
             return -1
         return 0        
 
+    # The method that is called by the GUI
     def move(self, row, col, blocked):
         if self.can_move(row, col, blocked):
             self.row = row
