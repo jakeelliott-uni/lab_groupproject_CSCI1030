@@ -1,3 +1,50 @@
+import json
+from tkinter import simpledialog, messagebox
+
+
+###########################
+
+"""
+File I/O helpers.
+"""
+
+# Is called when the Create Player button is pressed.
+# Open an input box and calls create_player() with the new name
+# Handles the potential ValueError with a messagebox that displays error info
+def ask_for_player_name():
+    name = simpledialog.askstring("Create Player", "Enter a player name.")
+    if not name:
+        return
+
+    try:
+        create_player(name)
+    except ValueError as error:
+        messagebox.showerror("Could not create player", str(error))
+
+# Try to open a profiles.json file and just pass if it isn't created yet.
+# Check if the name already exists, raising a ValueError that is captured by ask_for_player_name()
+# Add the new profile to the main json dict, then write over with the updated profiles
+# Will auto create a profiles.json file if one doesn't exist in the current directory
+# NOTE: Make sure to maintain the same directory when running or it will create duplicate .json files
+def create_player(name):
+    profiles = {}
+
+    try:
+        with open("profiles.json", "r") as file:
+            profiles = json.load(file)
+    except FileNotFoundError:
+        pass
+
+    if name in profiles:
+        raise ValueError("That name already exists")
+
+    profiles[name] = {"wins": 0, "losses": 0, "draw": 0}
+
+    with open("profiles.json", "w") as file:
+        json.dump(profiles, file)
+
+###############################
+
 def cleanMoveInput(move):
     pieces = "KQBRNP"
     square_letters = "abcdefgh"
@@ -140,5 +187,4 @@ def is_in_check(board, playerNumber):
 
                     if validMove(move_string):
                         return False
-
     return True
