@@ -29,7 +29,22 @@ class Launcher:
                 command=lambda cls=game_class: self.launch(cls)
             ).pack()
 
+        # interface-hadi: small tkinter button that opens a UI pop-up 
+        tk.Button(
+            self.main_frame, 
+            text="Info", 
+            command=lambda: messagebox.showinfo("Info", "Welcome to Chess Arcade!")
+        ).pack(pady=5)
+
+        
+
         # Create a button that when clicked opens an input box for a name
+        create_player_button = tk.Button(
+            self.main_frame,
+            text="Create Player",
+            command=ask_for_player_name,
+        )
+        create_player_button.pack(side="bottom", pady=10)
         # This name is used in helper ask_for_player_name() and create_player()
         # Where a json file is updated with the new player info 
         create_player_button = tk.Button(
@@ -55,6 +70,7 @@ class Launcher:
 def add_args_to_parser(parser):
     parser.add_argument('--width', type=int, default=700)
     parser.add_argument('--height', type=int, default=600)
+    parser.add_argument('--title', type=str, default="Chess Arcade")  # argparse-hadi
 
 # Create a parser object to collect command arguments
 # Initializes the 'root', sets the initial menu title, initializes a Launcher(root), then runs .mainloop()
