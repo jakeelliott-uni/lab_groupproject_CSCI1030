@@ -188,3 +188,36 @@ def is_in_check(board, playerNumber):
                     if validMove(move_string):
                         return False
     return True
+
+
+
+# oop-hadi: I just created a class representing a player profile managing  player state and methods
+class PlayerProfile:
+    def __init__(self, name, wins=0):
+        self.name = name
+        self.wins = wins
+
+    def add_win(self):
+        self.wins += 1
+
+# fileio-hadi: function to save player score using json file I/O
+import json
+
+def save_player_score(name, wins):
+    try:
+        with open("profiles.json", "r") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        data = {}
+    data[name] = {"wins": wins}
+    with open("profiles.json", "w") as f:
+        json.dump(data, f)
+
+# recursion-hadi: recursive function to count remaining pieces on the board
+def count_pieces_recursive(board, row=0, col=0):
+    if row >= len(board):
+        return 0
+    next_row = row + 1 if col == len(board[0]) - 1 else row
+    next_col = 0 if col == len(board[0]) - 1 else col + 1
+    has_piece = 1 if board[row][col] != " " else 0
+    return has_piece + count_pieces_recursive(board, next_row, next_col)
