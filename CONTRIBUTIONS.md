@@ -67,13 +67,13 @@ Worked example:
 
 ## Milestone 2 - Practical Application (Unit 03)
 
-| Student | OOP | File I/O | Recursion | Command-line args | Interface (TUI/GUI) |
-|---------|-----|----------|-----------|-------------------|---------------------|
-| <name>  |     |          |           |                   |                     |
-| <name>  |     |          |           |                   |                     |
-| <name>  |     |          |           |                   |                     |
-| <name>  |     |          |           |                   |                     |
-| <name>  |     |          |           |                   |                     |
+| Student |   OOP   | File I/O | Recursion | Command-line args | Interface (TUI/GUI) |
+|---------|-------|----------|-----------|-------------------|---------------------|
+|  Jonad  |a5e68de|  dd8f19f |  268b41f  |      268b41f      |       a5e68de       |
+| <name>  |       |          |           |                   |                     |
+| <name>  |       |          |           |                   |                     |
+| <name>  |       |          |           |                   |                     |
+| <name>  |       |          |           |                   |                     |
 
 ## Milestone 3 - Final Product (Units 04-05)
 

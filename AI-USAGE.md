@@ -79,10 +79,10 @@ changed and how you tested it.
 
 ### Milestone 2 - Practical Application (explanation only)
 
-| Student | AI tool(s) used | Used it for |
-|---------|-----------------|-------------|
+|    Student   | AI tool(s) used | Used it for |
+|--------------|-----------------|-------------|
 | Jake Elliott | Gemini in Google search |  Practice problems related to tkinter menus/frames and explaining ways to build a chessGUI class         |
-| <name>  |                 |             |
+| Jonad Senolos| Gemini(AI Overview) Google Seatch| Explain what recursion is and how it is helpful in my case |
 | <name>  |                 |             |
 | <name>  |                 |             |
 | <name>  |                 |             |
