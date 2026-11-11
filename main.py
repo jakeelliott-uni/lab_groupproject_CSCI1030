@@ -1,7 +1,10 @@
 from helperFunctions import *
 from boardState import *
+from launcher import *
 
 def main():
+   run()
+   """ 
     print("Chess 2.0")
     print("////////////////////////////////")
     print("K = king, Q = Queen, B = Bishop, R = Rook, N = Knight, P = pawn")
@@ -60,7 +63,7 @@ def main():
         else:
             player_turn = True
 
-
+"""
 
 if __name__ == '__main__':
     main()
