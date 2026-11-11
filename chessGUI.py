@@ -51,7 +51,7 @@ class ChessGameGUI:
                 btn = tk.Button(
                     self.frame,
                     width=4,
-                    height=3,
+                    height=2,
                     bg=bg,
                     font=("Arial", 16, "bold"),
                     command=lambda r=row, c=col: self.on_square_click(r, c),
