@@ -70,7 +70,7 @@ Worked example:
 | Student |   OOP   | File I/O | Recursion | Command-line args | Interface (TUI/GUI) |
 |---------|-------|----------|-----------|-------------------|---------------------|
 |  Jonad  |a5e68de|  dd8f19f |  268b41f  |      268b41f      |       a5e68de       |
-| <name>  |       |          |           |                   |                     |
+|   hadi  |16d63a4|  16d63a4 |  16d63a4  |      0ff2798      |       0ff2798       |
 | <name>  |       |          |           |                   |                     |
 | <name>  |       |          |           |                   |                     |
 | <name>  |       |          |           |                   |                     |
