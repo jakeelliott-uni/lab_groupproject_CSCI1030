@@ -190,11 +190,11 @@ class MainMenu:
         tk.Label(
             self.menu_frame,
             text = "Chess Game Thingy mabob\n\n\n" # !!! IMPORTATNT CHANGE THIS LATER DONT DORGET!!!
-                    "Name\n"
-                    "Name\n"
-                    "Name\n"
-                    "Name\n"
-                    "Name\n",
+                    "Hadi Zahid"
+                    "Jake Elliott\n"
+                    "Jashahan Jagathas\n"
+                    "Jonad Gabrielle Senolos\n"
+                    "Ziad Ridwan\n",
             font = ("Arial", 16),
             justify = "center" # Text alignment
         ).pack(pady = 30)
