@@ -1,13 +1,42 @@
 import tkinter as tk
+import json
 from chessGUI import ChessGameGUI # Import Hadi's class, thanks Hadi :P
 
-#Jonad
+DEFAULT_CONFIG = {
+    "title": "Krazy Chess",
+    "width": 700,
+    "height": 600
+}
+    # JONAD :: json
+
+def load_config():
+    try:
+        with open("settings.json", "r") as file:
+            config = json.load(file) # Reading the file as a py dict
+
+        return config
+
+    except FileNotFoundError:
+        return DEFAULT_CONFIG.copy()
+
+def save_config(config):
+    with open("settings.json", "w") as file:
+        json.dump(config, file)
+
+
+#Jonad::OOP + GUI
 class MainMenu:
-    def __init__(self, root):
+    def __init__(self, root, config):
         self.root = root
-        self.root.title("Krazy Chess <TITLE W.I.P.>")
-        self.root.geometry("700x600") # Dimensions of the window
+        
+        self.config = config
+        # self.root.title("Krazy Chess <TITLE W.I.P.>")
+        self.root.title(self.config["title"])
+        #self.root.geometry("700x600") # Dimensions of the window
+        self.root.geometry(f'{self.config["width"]}x{self.config["height"]}')
         self.root.resizable(False, False) #P.S. I don't wanna have to deal with resizing graphics rn
+        # P.P.S, I'm gonna mess with it ig, if it beraks, it breaks.
+
 
         self.menu_frame = None # Holds the menu screen.
         self.active_game = None # This will hold the chess game in the future when it's running
@@ -39,8 +68,10 @@ class MainMenu:
     def show_main_menu(self):
         self.clear_screen() # Make sure everything is reseted to default fistr
         self.root.title("Krazy Chess")
-        self.root.protocol("WM_DELETE_WINDOW", self.root.destroy) # What happens when the user clicks the x, terminates iot rather than just abruptly ending the program
+        #self.root.protocol("WM_DELETE_WINDOW", self.root.destroy) # What happens when the user clicks the x, terminates iot rather than just abruptly ending the program
+        # replaced it with my own function
 
+        self.root.protocol("WM_DELETE_WINDOW", self.quit_game)
         tk.Label(
             self.menu_frame,
             text = "WIP",
@@ -49,7 +80,7 @@ class MainMenu:
 
         self.create_button("Play", self.show_play_menu)
         self.create_button("Credits", self.show_credits)
-        self.create_button("Quit", self.root.destroy)
+        self.create_button("Quit", self.quit_game)
 
     # BUTTONS
 
@@ -114,7 +145,7 @@ class MainMenu:
                     "Name\n"
                     "Name\n",
             font = ("Arial", 16),
-            justify = "Center" # Text alignment
+            justify = "center" # Text alignment
         ).pack(pady = 30)
 
         self.create_button("Back", self.show_main_menu) # PROBLEM NOT SHOWING!!!
@@ -138,7 +169,15 @@ class MainMenu:
 
         self.active_game.start()
 
+
+    def quit_game(self):
+        save_config(self.config)
+        self.root.destroy()
+    
 if __name__ == "__main__":
     root = tk.Tk()
-    MainMenu(root)
+
+    config = load_config()
+
+    MainMenu(root, config)
     root.mainloop()
