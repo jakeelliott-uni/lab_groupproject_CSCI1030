@@ -5,7 +5,7 @@ When creating a new piece you just need to add it's logic to a can_move() method
 # ToDo: Adding the logic to take pieces, will probably look like a mix of _valid_destination
 #       and path_clear()
 class Piece:
-    def __init__(self, row, col):
+    def __init__(self, row: int, col: int):
         self.row = row
         self.col = col
 
@@ -60,11 +60,10 @@ class Piece:
 
 class Bishop(Piece):
     def can_move(self, row, col, blocked):
-        if not self.path_clear(row, col, blocked):
-            return False
         if abs(row - self.row) != abs(col - self.col):
             return False
-
+        if not self.path_clear(row, col, blocked):
+            return False
         return True
 
 class King(Piece):
@@ -95,34 +94,34 @@ class Knight(Piece):
 
 class Pawn(Piece):
     def can_move(self, row, col, blocked):
-        if not self.path_clear(row, col, blocked):
-            return False
-
         row_diff = row - self.row
         col_diff = col - self.col
 
         if col_diff != 0 or row_diff > 1:
             return False
 
+        if not self.path_clear(row, col, blocked):
+            return False
+        
         return True
 
 class Queen(Piece):
     def can_move(self, row, col, blocked):
-        if not self.path_clear(row, col, blocked):
-            return False
-       
         is_straight = (row == self.row) or (col == self.col)
         is_diagonal = abs(row - self.row) == abs(col - self.col)
        
         if not (is_straight or is_diagonal):
+            return False
+
+        if not self.path_clear(row, col, blocked):
             return False
        
         return True
 
 class Rook(Piece):
     def can_move(self, row, col, blocked):
-        if not self.path_clear(row, col, blocked):
-            return False
         if row != self.row and col != self.col:
+            return False
+        if not self.path_clear(row, col, blocked):
             return False
         return True
